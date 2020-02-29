@@ -1,5 +1,7 @@
 package br.edu.unifacear.entidade;
 
+import java.math.BigDecimal;
+
 public class Montadora {
 	
 	private int id;
@@ -15,6 +17,13 @@ public class Montadora {
 		return montadora;
 	}
 	public void setMontadora(String montadora) {
+		this.montadora = montadora;
+	}
+	
+	public Montadora() {}
+	public Montadora(int id, String montadora) {
+		super();
+		this.id = id;
 		this.montadora = montadora;
 	}
 

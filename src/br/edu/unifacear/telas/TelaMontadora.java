@@ -3,12 +3,13 @@ package br.edu.unifacear.telas;
 import java.util.List;
 import java.util.Scanner;
 
-import br.edu.unifacear.DAO.Dao;
 import br.edu.unifacear.DAO.MontadoraDAO;
 import br.edu.unifacear.entidade.Montadora;
+import br.edu.unifacear.exception.BusinessException;
+import br.edu.unifacear.service.MontadoraService;
 
 public class TelaMontadora {
-	public void mostratTelaMontadora() {
+	public void mostratTelaMontadora() throws Exception {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-------------------------------------------------------------");
@@ -22,16 +23,16 @@ public class TelaMontadora {
 			
 			if(opcao == 1) {
 				Montadora montadora = new Montadora();
-				System.out.println("Digite o ID do montadora: ");
-				int id = sc.nextInt();
-				montadora.setId(id);
 				System.out.println("Digite o nome da montadora: ");
 				String nome = sc.nextLine();
 				nome += sc.nextLine();
 				montadora.setMontadora(nome);
 				
-				Dao<Montadora> dao = new MontadoraDAO();
-				dao.inserir(montadora);
+				try {
+					new MontadoraService().inserir(montadora);
+				}catch (BusinessException e){
+					System.out.println(e.getMessage());
+				}
 			}
 			
 			if (opcao == 2) {

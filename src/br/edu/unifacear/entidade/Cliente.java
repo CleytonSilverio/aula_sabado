@@ -6,8 +6,7 @@ public class Cliente {
 	private String nome;
 	private String login;
 	private String senha;
-	
-	
+
 	public int getId() {
 		return id;
 	}
@@ -33,6 +32,16 @@ public class Cliente {
 		this.senha = senha;
 	}
 	
+	public Cliente() {
+		
+	}
 	
+	public Cliente(int id, String nome, String login, String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
+	}
 
 }

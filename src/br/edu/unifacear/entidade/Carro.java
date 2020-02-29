@@ -33,5 +33,15 @@ public class Carro {
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
+	public Carro() {}
+	public Carro(int id, String modelo, String montadora, BigDecimal valor) {
+		super();
+		this.id = id;
+		this.modelo = modelo;
+		this.montadora = montadora;
+		this.valor = valor;
+	}
+	
+	
 	
 }
